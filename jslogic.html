@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <title>UltimateQuestion</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+        integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var cpuRdm = ["H", "T", "D", "E", "N"];
+
+        var won = 0;
+
+        var lost = 0;
+
+        var cpu = document.getElementById("#cpuChose");
+
+        var playerOne = document.getElementById("#playerOne");
+
+        var wonText = document.getElementById("#won");
+
+        var lostText = document.getElementById("#lost");
+
+
+        var N = {
+
+            firstName: "Issac",
+            lastName: "Newton",
+            attack: 55,
+            defense: 25,
+            heatlh: 200,
+            img: "assets/newtonattack.gif",
+            //: function(movePlayer) into battlerealm #playerOne the have cpu choose random move to #cpu        
+        
+        };
+
+        var T = {
+
+            firstName: "Nikola",
+            lastName: "Tesla",
+            attack: 60,
+            defense: 15,
+            heatlh: 220,
+            img: "assets/teslaattack.gif",
+            //: function(movePlayer) into battlerealm #playerOne the have cpu choose random move to #cpu
+
+        };
+
+        var E = {
+
+            firstName: "Albert",
+            lastName: "Einstien",
+            attack: 75,
+            defense: 30,
+            heatlh: 165,
+            img: "assets/einstienattack.gif",
+            //: function(movePlayer) into battlerealm #playerOne the have cpu choose random move to #cpu
+
+        };
+
+        var D = {
+
+            firstName: "Charles",
+            lastName: "Darwin",
+            attack: 85,
+            defense: 25,
+            heatlh: 165,
+            img: "assets/darwinattack.gif",
+            //: function(movePlayer) into battlerealm #playerOne the have cpu choose random move to #cpu
+
+        };
+
+        var H = {
+            
+            firstName: "Stephen",
+            lastName: "Hawking",
+            attack: 80,
+            defense: 30,
+            heatlh: 160,
+            img: "assets/hawkingattack.gif",
+            //: function(movePlayer) into battlerealm #playerOne the have cpu choose random move to #cpu
+
+        };
+
+        document.onclick = function (playerOne) {
+
+            var playerOneChose = playerOne.click;
+
+            var cpuChose = cpuRdm[Math.floor(Math.random() * cpuRdm.length)];
+
+            if (playerOneChose === "N") {
+
+                $("#playerOneChose").html(
+
+                    "<img src = 'assets/newtonattack.gif' />"
+
+                );
+            }
+
+            if ((playerOneChose === "E") || (playerOneChose === "D") || (playerOneChose === "T") || (playerOneChose === "H") || (playerOneChose === "N")) {
+
+                if ((playerOneChose === "E" && cpuChose === "N" || "T")
+
+                    (playerOneChose === "D" && cpuChose === "E" || "T")
+
+                    (playerOneChose === "T" && cpuChose === "N" || "H")
+
+                    (playerOneChose === "H" && cpuChose === "E" || "D")
+
+                    (playerOneChose === "N" && cpuChose === "D" || "H")) {
+
+                    won++;
+
+                } else {
+
+                    lost++;
+
+                }
+
+                if (won > 3) {
+
+                    location.replace("ultimate.html")
+
+                }
+
+
+                if (lost > 3) {
+
+                    location.replace("index.html")
+
+                }
+
+            }
+
+        }
+
+
+    </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"
+        integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
